@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\users;
 use Illuminate\Http\Request;
 
 class ChecadaController extends Controller
 {
     public function index(){
-        return view('checada.index');
+        $datos = users::all();
+        return view('home', compact(('datos')));
     }
 
     public function create(){

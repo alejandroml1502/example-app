@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChecadaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+
 Route::get('/', HomeController::class);
 
 Route::get('/checada', HomeController::class);
@@ -25,3 +27,6 @@ Route::get('checada/create', [ChecadaController::class, 'create']);
 
 Route::get('checada/{checada}', [ChecadaController::class, 'show']);
 
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
