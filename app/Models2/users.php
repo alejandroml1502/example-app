@@ -4,14 +4,12 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class users extends Model
+class users extends Authenticatable
 {
-    
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -29,7 +27,7 @@ class users extends Model
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
-     *//*
+     */
     protected $hidden = [
         'password',
         'remember_token',
@@ -40,9 +38,8 @@ class users extends Model
      *
      * @var array<string, string>
      */
-    /*protected $casts = [
+    protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    */
 }

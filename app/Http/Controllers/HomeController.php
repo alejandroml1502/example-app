@@ -16,7 +16,6 @@ class HomeController extends Controller
 
     public function index()
     {
-        $datos = users::all();
-        return view('home', compact(('datos')));
+        return view('home');
     }
 }

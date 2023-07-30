@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AccMonitorLogController;
 use App\Http\Controllers\ChecadaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Models\Acc_monitor_log;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -17,7 +19,11 @@ use Illuminate\Support\Facades\DB;
 */
 
 
-Route::get('/', HomeController::class);
+//Route::get('/', HomeController::class);
+
+Route::get('/', [AccMonitorLogController::class, 'index'])->name('home');
+
+Route::get('/search', [AccMonitorLogController::class, 'search'])->name('search');
 
 Route::get('/checada', HomeController::class);
 
@@ -29,4 +35,4 @@ Route::get('checada/{checada}', [ChecadaController::class, 'show']);
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
