@@ -5,9 +5,10 @@
 
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 <div class="card">
-    <div class="card-header">
-      SISTEMA DE CHECADAS
+    <div class="card-header" >
+      <img id="img1" src="https://g-global.com/wp-content/uploads/2023/04/G-Global_Logo_ENGLISH-01.png" alt="Logo G-Global">
     </div>
     <nav class="navbar navbar-light bg-light">
       
@@ -26,6 +27,15 @@
       
       <p class="card-text">
         <div class="table table-responsive">
+          <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="redirigir()">Enviar</button>
+          <script>
+            function redirigir() {
+              window.location.href = '/justificacion';
+            }
+          </script>
+
+          </div>
           <table class="table table-striped" >
             <thead>
               <tr>

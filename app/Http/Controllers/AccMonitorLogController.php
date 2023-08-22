@@ -41,7 +41,10 @@ class AccMonitorLogController extends Controller
                 <td>'.$employee->lastname.'</td>
                 <td>'.$employee->time.'</td>
                 <td>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Enviar</button>
+                <div>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                </div>
+                
                 </td>
             </tr>';
 

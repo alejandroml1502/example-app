@@ -7,6 +7,9 @@ use App\Http\Controllers\HomeController;
 use App\Models\Acc_monitor_log;
 use Illuminate\Support\Facades\DB;
 
+use App\Mail\Justificacion;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +35,15 @@ Route::get('checada/index', [ChecadaController::class, 'index']);
 Route::get('checada/create', [ChecadaController::class, 'create']);
 
 Route::get('checada/{checada}', [ChecadaController::class, 'show']);
+
+Route::get('justificacion', function(){
+    $correo = new Justificacion;
+
+    Mail::to('erick.morales@g-global.com')->send($correo);
+
+    return "Mensaje enviado";
+
+});
 
 
 
